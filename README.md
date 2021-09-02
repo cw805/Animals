@@ -1,3 +1,2 @@
 # newrepo
-For new sem
-They told me to add a new line
+Will Rstudio be nice to me?
