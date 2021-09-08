@@ -99,7 +99,7 @@ ggplot(monthly, aes(dates, total, group = intakes,
   labs(subtitle = "2021 Intake & Outcome Summary") 
 ```
 
-![](the-right-test-pretty_files/figure-html/unnamed-chunk-8-1.png)<!-- -->
+![](Animal_Porject_files/figure-html/unnamed-chunk-8-1.png)<!-- -->
 
 In the beginning of 2020, many have been working and studying from home during the lock down.
 Animal shelters experienced higher than ever adoption rates.
@@ -196,7 +196,7 @@ ggplot(surr_plot, aes(year, cases, fill = reason)) +
   theme(legend.position = "none") 
 ```
 
-![](the-right-test-pretty_files/figure-html/unnamed-chunk-12-1.png)<!-- -->
+![](Animal_Porject_files/figure-html/unnamed-chunk-12-1.png)<!-- -->
 
 ##  {.unnumbered}
 
@@ -223,7 +223,7 @@ labs(x = "Year" , y = NULL) +
   theme_minimal()
 ```
 
-![](the-right-test-pretty_files/figure-html/unnamed-chunk-15-1.png)<!-- -->
+![](Animal_Porject_files/figure-html/unnamed-chunk-15-1.png)<!-- -->
 
 This is a glimpse of the outcomes from the Austin animal shelter from 2013-2016.
 It is encouraging that overall euthanasia rate has decreased over the years.
@@ -306,7 +306,7 @@ ggplot(dog_plot, aes(Year, percent, fill = OutcomeType)) +
  theme_minimal()
 ```
 
-![](the-right-test-pretty_files/figure-html/unnamed-chunk-19-1.png)<!-- -->
+![](Animal_Porject_files/figure-html/unnamed-chunk-19-1.png)<!-- -->
 
 ```r
   #ggplot(dog_outcomes, aes(Year, n, fill = OutcomeType)) +
@@ -391,7 +391,7 @@ ggplot(cat_plot, aes(Year, percent, fill = OutcomeType)) +
  theme_minimal()
 ```
 
-![](the-right-test-pretty_files/figure-html/unnamed-chunk-22-1.png)<!-- -->
+![](Animal_Porject_files/figure-html/unnamed-chunk-22-1.png)<!-- -->
 
 ## ![](pics/cat.jpeg "cat") {.unnumbered}
 
@@ -423,7 +423,7 @@ ggplot(euthanasia, aes(factor(year), cases, fill =
       plot.background = element_rect(colour = "black", size = 1)) 
 ```
 
-![](the-right-test-pretty_files/figure-html/unnamed-chunk-24-1.png)<!-- -->
+![](Animal_Porject_files/figure-html/unnamed-chunk-24-1.png)<!-- -->
 
 ### Table
 
@@ -503,11 +503,11 @@ kable(euth_table) %>% kable_styling("striped")
 
 ### Dogs neutered/spayed
 
-![](the-right-test-pretty_files/figure-html/unnamed-chunk-29-1.png)<!-- -->
+![](Animal_Porject_files/figure-html/unnamed-chunk-29-1.png)<!-- -->
 
 ### Cat neutered/spayed
 
-![](the-right-test-pretty_files/figure-html/unnamed-chunk-30-1.png)<!-- -->
+![](Animal_Porject_files/figure-html/unnamed-chunk-30-1.png)<!-- -->
 
 ##  {.unnumbered}
 
@@ -522,13 +522,13 @@ In some foster systems, animals are required to be spayed/neutered before adopti
 
 ### cat with names
 
-![](the-right-test-pretty_files/figure-html/unnamed-chunk-31-1.png)<!-- -->
+![](Animal_Porject_files/figure-html/unnamed-chunk-31-1.png)<!-- -->
 
 ### Dog with Names
 
 
 
-![](the-right-test-pretty_files/figure-html/unnamed-chunk-33-1.png)<!-- -->
+![](Animal_Porject_files/figure-html/unnamed-chunk-33-1.png)<!-- -->
 
 
 
@@ -816,7 +816,7 @@ ggplot(age_outcome,
   theme_bw()
 ```
 
-![](the-right-test-pretty_files/figure-html/unnamed-chunk-42-1.png)<!-- -->
+![](Animal_Porject_files/figure-html/unnamed-chunk-42-1.png)<!-- -->
 
 ------------------------------------------------------------------------
 
