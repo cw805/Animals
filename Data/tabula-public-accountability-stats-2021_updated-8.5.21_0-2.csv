@@ -1,0 +1,98 @@
+INTAKES,Dog,Puppy,Cat,Kitten,Other,Total
+Stray,17,3,148,21,7,196
+Owner Surrender,62,4,205,32,92,395
+Returns,33,9,26,3,-,71
+Transfer From Another Agency,175,172,1,-,-,348
+Cruelty,-,-,2,6,10,18
+TOTAL INTAKES,287,188,382,62,109,"1,028"
+OUTCOMES,Dog,Puppy,Cat,Kitten,Other,Total
+Adoption,208,164,273,83,97,825
+Return to Owner/Guardian,15,3,12,-,-,30
+Transfer Out,3,-,81,5,3,92
+Euthanasia,17,1,23,2,7,50
+Died or Lost in Shelter/Care,-,-,1,1,3,5
+TOTAL OUTCOMES,243,168,390,91,110,"1,002"
+INTAKES,Dog,Puppy,Cat,Kitten,Other,Total
+Stray,17,1,112,19,1,150
+Owner Surrender,57,6,172,33,84,352
+Returns,51,15,13,2,3,84
+Transfer From Another Agency,164,159,13,1,3,340
+Cruelty,-,-,-,-,-,-
+TOTAL INTAKES,289,181,310,55,91,926
+OUTCOMES,Dog,Puppy,Cat,Kitten,Other,Total
+Adoption,272,159,208,35,84,758
+Return to Owner/Guardian,13,1,14,-,-,28
+Transfer Out,3,-,45,8,-,56
+Euthanasia,22,2,20,-,5,49
+Died or Lost in Shelter/Care,-,1,-,-,-,1
+TOTAL OUTCOMES,310,163,287,43,89,892
+INTAKES,Dog,Puppy,Cat,Kitten,Other,Total
+Stray,44,5,163,13,10,235
+Owner Surrender,60,10,207,72,87,436
+Returns,76,9,20,-,5,110
+Transfer From Another Agency,250,236,23,2,-,511
+Cruelty,2,-,18,-,-,20
+TOTAL INTAKES,432,260,431,87,102,"1,312"
+OUTCOMES,Dog,Puppy,Cat,Kitten,Other,Total
+Adoption,331,207,269,65,98,970
+Return to Owner/Guardian,34,2,17,2,-,55
+Transfer Out,3,2,107,2,-,114
+Euthanasia,20,3,25,2,1,51
+Died or Lost in Shelter/Care,-,-,3,1,-,4
+TOTAL OUTCOMES,388,214,421,72,99,"1,194"
+INTAKES,Dog,Puppy,Cat,Kitten,Other,Total
+Stray,32,3,170,16,8,229
+Owner Surrender,58,8,193,100,96,455
+Returns,45,19,22,4,5,95
+Transfer From Another Agency,217,179,8,-,-,404
+Cruelty,21,9,13,6,-,49
+TOTAL INTAKES,373,218,406,126,109,"1,232"
+OUTCOMES,Dog,Puppy,Cat,Kitten,Other,Total
+Adoption,289,239,247,71,116,962
+Return to Owner/Guardian,26,1,19,-,5,51
+Transfer Out,14,1,109,7,1,132
+Euthanasia,23,4,17,2,2,48
+Died or Lost in Shelter/Care,1,-,1,1,-,3
+TOTAL OUTCOMES,353,245,393,81,124,"1,196"
+INTAKES,Dog,Puppy,Cat,Kitten,Other,Total
+Stray,36,-,176,25,5,242
+Owner Surrender,72,10,213,107,83,485
+Returns,56,29,29,4,5,123
+Transfer From Another Agency,245,194,4,1,-,444
+Cruelty,6,-,26,41,2,75
+TOTAL INTAKES,415,233,448,178,95,"1,369"
+OUTCOMES,Dog,Puppy,Cat,Kitten,Other,Total
+Adoption,322,220,273,149,82,"1,046"
+Return to Owner/Guardian,36,-,30,-,1,67
+Transfer Out,5,-,107,3,4,119
+Euthanasia,30,-,33,1,3,67
+Died or Lost in Shelter/Care,-,-,2,1,3,6
+TOTAL OUTCOMES,393,220,445,154,93,"1,305"
+INTAKES,Dog,Puppy,Cat,Kitten,Other,Total
+Stray,35,3,166,49,13,266
+Owner Surrender,79,10,189,197,120,595
+Returns,47,22,32,15,8,124
+Transfer From Another Agency,189,169,3,3,1,365
+Cruelty,2,-,11,2,12,27
+TOTAL INTAKES,352,204,401,266,154,"1,377"
+OUTCOMES,Dog,Puppy,Cat,Kitten,Other,Total
+Adoption,308,181,272,220,121,"1,102"
+Return to Owner/Guardian,33,2,20,2,2,59
+Transfer Out,6,-,88,10,5,109
+Euthanasia,40,6,39,20,3,108
+Died or Lost in Shelter/Care,3,1,1,4,3,12
+TOTAL OUTCOMES,390,190,420,256,134,"1,390"
+INTAKES,Dog,Puppy,Cat,Kitten,Other,Total
+Stray,61,7,212,79,17,376
+Owner Surrender,102,7,251,176,110,646
+Returns,59,18,24,8,7,116
+Transfer From Another Agency,194,184,7,13,1,399
+Cruelty,-,-,15,1,-,16
+TOTAL INTAKES,416,216,509,277,135,"1,553"
+OUTCOMES,Dog,Puppy,Cat,Kitten,Other,Total
+Adoption,306,194,254,248,131,"1,133"
+Return to Owner/Guardian,37,-,27,9,-,73
+Transfer Out,5,-,138,21,1,165
+Euthanasia,41,3,23,8,3,78
+Died or Lost in Shelter/Care,-,-,2,6,-,8
+TOTAL OUTCOMES,389,197,444,292,135,"1,457"
