@@ -1,2 +1,3 @@
-# newrepo
-Will Rstudio be nice to me?
+# Project on pet adoption
+
+Because four-legged friends
