@@ -1,3 +1,1 @@
-# Project on pet adoption
-
-Because four-legged friends
+# Started project for Intro to Data Science Course
