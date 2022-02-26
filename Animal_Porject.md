@@ -1,6 +1,6 @@
 ---
-title: "Adption by Numbers"
-date: "2021-09-08"
+title: "Animals by Numbers"
+date: "2022-02-15"
 output:
   html_document: 
     toc: yes
@@ -16,7 +16,7 @@ output:
 
 
 
-![](pics/group%20of%20animals.jpg "group pic2"){width="486"}
+![](pics/group_cats_dogs.jpeg "group pic2"){width="486"}
 
 # Introduction
 
@@ -63,11 +63,13 @@ When comparing differences between variables such as dog vs. cat or each year, n
 
 Image sources:
 
-[cover page](%22https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.123rf.com%2Fphoto_96473296_cat-dog-and-rabbit-sitting-together-isolated-on-white-background-.html&psig=AOvVaw2_g3Ur_H__iCpChrzJ8xzd&ust=1630247317835000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCJii2auk1_ICFQAAAAAdAAAAABAD%22)
+[cover page](https://www.google.com/url?sa=i&url=http%3A%2F%2Fwww.computechsale.net%2Fjess.asp%3Fiid%3D164144030%26cid%3D42&psig=AOvVaw0IMbIv_uSgjNm5_psEz7eP&ust=1644565528712000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCICg-JrS9PUCFQAAAAAdAAAAABAp)
 
 [group of dogs](%22https://www.google.com/url?sa=i&url=https%3A%2F%2Faspengrovevet.com%2Fdog-care%2Fdog-senior-citizen%2F&psig=AOvVaw0rdkwNQWWaWKqsSapllXVK&ust=1630340258894000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCMCk6PXQ1vICFQAAAAAdAAAAABAs%22)
 
-[funny dog](%22https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.thesprucepets.com%2Ffunny-names-for-dogs-4797856&psig=AOvVaw1XDQ42GEv3jMZ7MMkD3asA&ust=1630511356965000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCJjk4KbO2_ICFQAAAAAdAAAAABAD%22)
+[Outcomes and trends group](https://www.google.com/url?sa=i&url=https%3A%2F%2Fcrossroadsvet.com%2F&psig=AOvVaw1Nl7JcqZxvGm8QhW6bVjLS&ust=1644566212177000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCNCN29nU9PUCFQAAAAAdAAAAABBz)
+
+[Dog outcome panoramic](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.shutterstock.com%2Fsearch%2Fdog%2Bphoto%2Bwallpaper&psig=AOvVaw2-pNpr1yFryNKRTrrrPZJv&ust=1644568265042000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCLDg6LDc9PUCFQAAAAAdAAAAABAE)
 
 [The cat](%22https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.scientificamerican.com%2Farticle%2Fcats-recognize-their-own-names-even-if-they-choose-to-ignore-them%2F&psig=AOvVaw1ZqdUROfU-oLb1Ds1UnmCN&ust=1630512447851000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCMC-zqzS2_ICFQAAAAAdAAAAABAD%22)
 
@@ -212,6 +214,7 @@ Cruelty cases spiked from 2016-2018, but decreased by almost 2% by 2020.
 
 # Outcomes & Trends
 
+![](pics/pets-ledge.jpeg "outcome group")
 
 ```r
 # austin all 2013-16
@@ -235,6 +238,8 @@ Surprisingly, there are around 25-30 % shelter dogs returned to their owners eac
 ------------------------------------------------------------------------
 
 ## Dog Outcomes 2013-2016 {.tabset}
+
+![](pics/panoramic_copy.jpg "dog outcome panoramic")
 
 ### Table
 
@@ -315,11 +320,11 @@ ggplot(dog_plot, aes(Year, percent, fill = OutcomeType)) +
 
 ##  {.unnumbered}
 
-![](pics/FunnyDog.jpeg){width="31%"}
-
 ------------------------------------------------------------------------
 
 ## Cat Outcomes 2013-2016 {.tabset}
+
+![](pics/panoramic_cats.jpeg "cat outcome panoramic")
 
 ### Table
 
@@ -393,7 +398,7 @@ ggplot(cat_plot, aes(Year, percent, fill = OutcomeType)) +
 
 ![](Animal_Porject_files/figure-html/unnamed-chunk-22-1.png)<!-- -->
 
-## ![](pics/cat.jpeg "cat") {.unnumbered}
+## {.unnumbered}
 
 ------------------------------------------------------------------------
 
@@ -790,7 +795,9 @@ kable(mixes, col.names = c("Dogs", "Cats")) %>% kable_styling("striped")
 
 # Age
 
-![](pics/senior-dogs-1024x726.jpg "old dogs")Puppies and Kittens are highly adoptable, especially kittens.
+![](pics/senior-dogs-1024x726.jpg "old dogs")
+
+Puppies and Kittens are highly adoptable, especially kittens.
 Besides the cuteness, some owners might take into account the health problems in older pets.
 In adult cats, many might have a harder time getting adopted or have a higher chance of being returned due to compatiblity issues such as households with children, other animals, or simply another cat.
 The age in this graph is counted in months.

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<!-- saved from url=(0039)https://sis.stolaf.edu/sis/tool-cal.cfm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta http-equiv="Expires" content="0">
+  <meta http-equiv="Cache-Control" content="no-cache">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta name="robots" content="noindex,nofollow">
+  
+
+  <link rel="stylesheet" href="./St. Olaf College Student Information System_files/jquery-ui-1.8.5.custom.css" type="text/css" media="all">
+
+  <script language="JavaScript" src="./St. Olaf College Student Information System_files/sis.js"></script>
+  <script language="JavaScript" src="./St. Olaf College Student Information System_files/jquery-1.7.1.min.js"></script>
+  <script language="JavaScript" src="./St. Olaf College Student Information System_files/jquery-ui-1.8.17.custom.min.js"></script>
+  <title>St. Olaf College Student Information System</title>
+  <link href="./St. Olaf College Student Information System_files/sis-stylesheet.css" rel="stylesheet" type="text/css">
+
+
+
+<style type="text/css">
+
+	body {
+		font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+		margin: 0;
+	}
+
+	h1 {
+		margin: 0;
+		padding: 0.5em;
+	}
+
+	p.description {
+		font-size: 0.8em;
+		padding: 1em;
+		position: absolute;
+		top: 3.2em;
+		margin-right: 400px;
+	}
+
+	#message {
+		font-size: 0.7em;
+		position: absolute;
+		top: 1em;
+		right: 1em;
+		width: 350px;
+		display: none;
+		padding: 1em;
+		background: #ffc;
+		border: 1px solid #dda;
+	}
+</style>
+<link rel="stylesheet" type="text/css" href="./St. Olaf College Student Information System_files/jquery-ui-1.7.2.css">
+<link rel="stylesheet" type="text/css" href="./St. Olaf College Student Information System_files/jquery.weekcalendar.css">
+
+<script type="text/javascript" src="./St. Olaf College Student Information System_files/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="./St. Olaf College Student Information System_files/jquery-ui-1.8.23.custom.min.js"></script>
+<script type="text/javascript" src="./St. Olaf College Student Information System_files/jquery.weekcalendar.js"></script>
+<script>
+	// these dates don't really matter; 11/2009 starts on a Sunday, which makes it convenient for us
+	// to use Sunday = 1, Monday = 2, Tuesday = 3, etc...
+	var year = 2009;
+	var month = 10; // actually 10 == November
+	var day = 1;
+
+	var myDate = new Date("November 1, 2009");
+
+	$(document).ready(function() {
+
+		$('#calendar').weekCalendar({
+		// defaults
+			date: new Date(),
+            timeFormat : "h:i a",
+            dateFormat : "M d, Y",
+            use24Hour : false,
+            firstDayOfWeek : 0, // 0 = Sunday, 1 = Monday, 2 = Tuesday, ... , 6 = Saturday
+            useShortDayNames: false,
+            timeSeparator : " to ",
+            startParam : "start",
+            endParam : "end",
+            businessHours : {start: 8, end: 18, limitDisplay : false},
+            newEventText : "New Event",
+            timeslotHeight: 20,
+            defaultEventLength : 2,
+            timeslotsPerHour : 4,
+            buttons : true,
+            buttonText : {
+                today : "today",
+                lastWeek : "&nbsp;&lt;&nbsp;",
+                nextWeek : "&nbsp;&gt;&nbsp;"
+            },
+            scrollToHourMillis : 500,
+            allowCalEventOverlap : false,
+            overlapEventsSeparate: false,
+            readonly: false,
+            draggable : function(calEvent, element) { return true;},
+            resizable : function(calEvent, element) { return true;},
+            eventClick : function(){},
+            eventRender : function(calEvent, element) { return element;},
+            eventAfterRender : function(calEvent, element) { return element;},
+            eventDrag : function(calEvent, element) {},
+            eventDrop : function(calEvent, element){},
+            eventResize : function(calEvent, element){},
+            eventNew : function(calEvent, element) {},
+            eventMouseover : function(calEvent, $event) {},
+            eventMouseout : function(calEvent, $event) {},
+            calendarBeforeLoad : function(calendar) {},
+            calendarAfterLoad : function(calendar) {},
+            noEvents : function() {},
+            shortMonths : ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            longMonths : ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+            shortDays : ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+            longDays : ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+
+			timeslotsPerHour: 3,
+			timeslotHeight: 20,
+			readonly: 1,
+			date: myDate,
+			businessHours: {start: 8, end: 22, limitDisplay: true},
+			buttons: 0,
+			timeSeparator: "-",
+			dateFormat : "",
+			timeFormat : "h:ia",
+			height: function($calendar){
+				return $(window).height() - $("h1").outerHeight();
+			},
+			data:eventData,
+		});
+	});
+
+</script>
+</head>
+<body>
+
+
+
+<script type="text/javascript">
+	var eventData = {
+		events : [
+		
+		
+			{"id":1,"start": new Date(year,month,2,10,10),"end": new Date(year,month,2,10,30),"title":"Chapel: 10:10am"},
+			{"id":2,"start": new Date(year,month,3,11,10),"end": new Date(year,month,3,11,30),"title":"Chapel: 11:10am"},
+			{"id":3,"start": new Date(year,month,4,10,10),"end": new Date(year,month,4,10,30),"title":"Chapel: 10:10am"},
+			{"id":4,"start": new Date(year,month,5,11, 0),"end": new Date(year,month,5,11,15),"title":"Chapel: 11:00am"},
+			{"id":5,"start": new Date(year,month,5,11,20),"end": new Date(year,month,5,12,35),"title":"Community Time"},
+			{"id":6,"start": new Date(year,month,6,10,10),"end": new Date(year,month,6,10,30),"title":"Chapel: 10:10am"},
+		
+			{"id":6,"start": new Date(year,month,2,10,45),"end": new Date(year,month,2,11,40),"title":"MATH-230B (TOH184)"},
+		
+			{"id":7,"start": new Date(year,month,4,10,45),"end": new Date(year,month,4,11,40),"title":"MATH-230B (TOH184)"},
+		
+			{"id":8,"start": new Date(year,month,6,10,45),"end": new Date(year,month,6,11,40),"title":"MATH-230B (TOH184)"},
+		
+			{"id":9,"start": new Date(year,month,2,12,55),"end": new Date(year,month,2,13,50),"title":"MATH-220D (TOH186)"},
+		
+			{"id":10,"start": new Date(year,month,4,12,55),"end": new Date(year,month,4,13,50),"title":"MATH-220D (TOH186)"},
+		
+			{"id":11,"start": new Date(year,month,6,12,55),"end": new Date(year,month,6,13,50),"title":"MATH-220D (TOH186)"},
+		
+			{"id":12,"start": new Date(year,month,2,14,00),"end": new Date(year,month,2,14,55),"title":"MSCS-389 (RNS207)"},
+		
+			{"id":13,"start": new Date(year,month,4,14,00),"end": new Date(year,month,4,14,55),"title":"MSCS-389 (RNS207)"},
+		
+			{"id":14,"start": new Date(year,month,6,14,00),"end": new Date(year,month,6,14,55),"title":"MSCS-389 (RNS207)"},
+		
+			{"id":15,"start": new Date(year,month,3,09,35),"end": new Date(year,month,3,11,00),"title":"EDUC-250 (TOH214)"},
+		
+			{"id":16,"start": new Date(year,month,5,09,30),"end": new Date(year,month,5,10,50),"title":"EDUC-250 (TOH214)"},
+		
+			{"id":17,"start": new Date(year,month,3,11,45),"end": new Date(year,month,3,13,10),"title":"STAT-272 (RNS160R)"},
+		
+			{"id":18,"start": new Date(year,month,5,12,45),"end": new Date(year,month,5,14,05),"title":"STAT-272 (RNS160R)"},
+		
+		]
+	};
+</script>
+	<div id="calendar"><div class="week-calendar"><table class="week-calendar-header"><tbody><tr><td class="time-column-header"></td><td class="day-column-header day-1">Sunday<br></td><td class="day-column-header day-2">Monday<br></td><td class="day-column-header day-3">Tuesday<br></td><td class="day-column-header day-4">Wednesday<br></td><td class="day-column-header day-5">Thursday<br></td><td class="day-column-header day-6">Friday<br></td><td class="day-column-header day-7">Saturday<br></td></tr></tbody></table><div class="calendar-scrollable-grid">                <table class="week-calendar-time-slots">                <tbody>                <tr>                <td class="grid-timeslot-header"></td>                <td colspan="7">                <div class="time-slot-wrapper">                <div class="time-slots"><div class="time-slot" style="height: 19px;"></div><div class="time-slot" style="height: 19px;"></div><div class="time-slot hour-end" style="height: 19px;"></div><div class="time-slot" style="height: 19px;"></div><div class="time-slot" style="height: 19px;"></div><div class="time-slot hour-end" style="height: 19px;"></div><div class="time-slot" style="height: 19px;"></div><div class="time-slot" style="height: 19px;"></div><div class="time-slot hour-end" style="height: 19px;"></div><div class="time-slot" style="height: 19px;"></div><div class="time-slot" style="height: 19px;"></div><div class="time-slot hour-end" style="height: 19px;"></div><div class="time-slot" style="height: 19px;"></div><div class="time-slot" style="height: 19px;"></div><div class="time-slot hour-end" style="height: 19px;"></div><div class="time-slot" style="height: 19px;"></div><div class="time-slot" style="height: 19px;"></div><div class="time-slot hour-end" style="height: 19px;"></div><div class="time-slot" style="height: 19px;"></div><div class="time-slot" style="height: 19px;"></div><div class="time-slot hour-end" style="height: 19px;"></div><div class="time-slot" style="height: 19px;"></div><div class="time-slot" style="height: 19px;"></div><div class="time-slot hour-end" style="height: 19px;"></div><div class="time-slot" style="height: 19px;"></div><div class="time-slot" style="height: 19px;"></div><div class="time-slot hour-end" style="height: 19px;"></div><div class="time-slot" style="height: 19px;"></div><div class="time-slot" style="height: 19px;"></div><div class="time-slot hour-end" style="height: 19px;"></div><div class="time-slot" style="height: 19px;"></div><div class="time-slot" style="height: 19px;"></div><div class="time-slot hour-end" style="height: 19px;"></div><div class="time-slot" style="height: 19px;"></div><div class="time-slot" style="height: 19px;"></div><div class="time-slot hour-end" style="height: 19px;"></div><div class="time-slot" style="height: 19px;"></div><div class="time-slot" style="height: 19px;"></div><div class="time-slot hour-end" style="height: 19px;"></div><div class="time-slot" style="height: 19px;"></div><div class="time-slot" style="height: 19px;"></div><div class="time-slot hour-end" style="height: 19px;"></div></div></div></td></tr><tr><td class="grid-timeslot-header"><div class="hour-header business-hours"><div class="time-header-cell" style="height: 49px; padding: 5px;">8<span class="am-pm">AM</span></div></div><div class="hour-header business-hours"><div class="time-header-cell" style="height: 49px; padding: 5px;">9<span class="am-pm">AM</span></div></div><div class="hour-header business-hours"><div class="time-header-cell" style="height: 49px; padding: 5px;">10<span class="am-pm">AM</span></div></div><div class="hour-header business-hours"><div class="time-header-cell" style="height: 49px; padding: 5px;">11<span class="am-pm">AM</span></div></div><div class="hour-header business-hours"><div class="time-header-cell" style="height: 49px; padding: 5px;">12<span class="am-pm">PM</span></div></div><div class="hour-header business-hours"><div class="time-header-cell" style="height: 49px; padding: 5px;">1<span class="am-pm">PM</span></div></div><div class="hour-header business-hours"><div class="time-header-cell" style="height: 49px; padding: 5px;">2<span class="am-pm">PM</span></div></div><div class="hour-header business-hours"><div class="time-header-cell" style="height: 49px; padding: 5px;">3<span class="am-pm">PM</span></div></div><div class="hour-header business-hours"><div class="time-header-cell" style="height: 49px; padding: 5px;">4<span class="am-pm">PM</span></div></div><div class="hour-header business-hours"><div class="time-header-cell" style="height: 49px; padding: 5px;">5<span class="am-pm">PM</span></div></div><div class="hour-header business-hours"><div class="time-header-cell" style="height: 49px; padding: 5px;">6<span class="am-pm">PM</span></div></div><div class="hour-header business-hours"><div class="time-header-cell" style="height: 49px; padding: 5px;">7<span class="am-pm">PM</span></div></div><div class="hour-header business-hours"><div class="time-header-cell" style="height: 49px; padding: 5px;">8<span class="am-pm">PM</span></div></div><div class="hour-header business-hours"><div class="time-header-cell" style="height: 49px; padding: 5px;">9<span class="am-pm">PM</span></div></div></td><td class="day-column day-1"><div class="day-column-inner" style="height: 840px;"></div></td><td class="day-column day-2"><div class="day-column-inner" style="height: 840px;"><div class="cal-event ui-corner-all" style="line-height: 18px; font-size: 10px; background-color: rgb(254, 254, 194); top: 130px; height: 20px; display: block;">                <div class="time ui-corner-all" style="background-color: rgb(254, 254, 194);">Chapel: 10:10am</div>                <div class="title" style="background-color: rgb(254, 254, 194);">10:10am-10:30am</div></div><div class="cal-event ui-corner-all" style="line-height: 18px; font-size: 10px; top: 165px; height: 55px; display: block;">                <div class="time ui-corner-all">MATH-230B (TOH184)</div>                <div class="title">10:45am-11:40am</div></div><div class="cal-event ui-corner-all" style="line-height: 18px; font-size: 10px; top: 295px; height: 55px; display: block;">                <div class="time ui-corner-all">MATH-220D (TOH186)</div>                <div class="title">12:55pm-01:50pm</div></div><div class="cal-event ui-corner-all" style="line-height: 18px; font-size: 10px; top: 360px; height: 55px; display: block;">                <div class="time ui-corner-all">MSCS-389 (RNS207)</div>                <div class="title">02:00pm-02:55pm</div></div></div></td><td class="day-column day-3"><div class="day-column-inner" style="height: 840px;"><div class="cal-event ui-corner-all" style="line-height: 18px; font-size: 10px; background-color: rgb(254, 254, 194); top: 190px; height: 20px; display: block;">                <div class="time ui-corner-all" style="background-color: rgb(254, 254, 194);">Chapel: 11:10am</div>                <div class="title" style="background-color: rgb(254, 254, 194);">11:10am-11:30am</div></div><div class="cal-event ui-corner-all" style="line-height: 18px; font-size: 10px; top: 95px; height: 85px; display: block;">                <div class="time ui-corner-all">EDUC-250 (TOH214)</div>                <div class="title">09:35am-11:00am</div></div><div class="cal-event ui-corner-all" style="line-height: 18px; font-size: 10px; top: 225px; height: 85px; display: block;">                <div class="time ui-corner-all">STAT-272 (RNS160R)</div>                <div class="title">11:45am-01:10pm</div></div></div></td><td class="day-column day-4"><div class="day-column-inner" style="height: 840px;"><div class="cal-event ui-corner-all" style="line-height: 18px; font-size: 10px; background-color: rgb(254, 254, 194); top: 130px; height: 20px; display: block;">                <div class="time ui-corner-all" style="background-color: rgb(254, 254, 194);">Chapel: 10:10am</div>                <div class="title" style="background-color: rgb(254, 254, 194);">10:10am-10:30am</div></div><div class="cal-event ui-corner-all" style="line-height: 18px; font-size: 10px; top: 165px; height: 55px; display: block;">                <div class="time ui-corner-all">MATH-230B (TOH184)</div>                <div class="title">10:45am-11:40am</div></div><div class="cal-event ui-corner-all" style="line-height: 18px; font-size: 10px; top: 295px; height: 55px; display: block;">                <div class="time ui-corner-all">MATH-220D (TOH186)</div>                <div class="title">12:55pm-01:50pm</div></div><div class="cal-event ui-corner-all" style="line-height: 18px; font-size: 10px; top: 360px; height: 55px; display: block;">                <div class="time ui-corner-all">MSCS-389 (RNS207)</div>                <div class="title">02:00pm-02:55pm</div></div></div></td><td class="day-column day-5"><div class="day-column-inner" style="height: 840px;"><div class="cal-event ui-corner-all" style="line-height: 18px; font-size: 10px; background-color: rgb(254, 254, 194); top: 180px; height: 15px; display: block;">                <div class="time ui-corner-all" style="background-color: rgb(254, 254, 194);">Chapel: 11:00am</div>                <div class="title" style="background-color: rgb(254, 254, 194);">11:00am-11:15am</div></div><div class="cal-event ui-corner-all" style="line-height: 18px; font-size: 10px; background-color: rgb(254, 254, 194); top: 200px; height: 75px; display: block;">                <div class="time ui-corner-all" style="background-color: rgb(254, 254, 194);">Community Time</div>                <div class="title" style="background-color: rgb(254, 254, 194);">11:20am-12:35pm</div></div><div class="cal-event ui-corner-all" style="line-height: 18px; font-size: 10px; top: 90px; height: 80px; display: block;">                <div class="time ui-corner-all">EDUC-250 (TOH214)</div>                <div class="title">09:30am-10:50am</div></div><div class="cal-event ui-corner-all" style="line-height: 18px; font-size: 10px; top: 285px; height: 80px; display: block;">                <div class="time ui-corner-all">STAT-272 (RNS160R)</div>                <div class="title">12:45pm-02:05pm</div></div></div></td><td class="day-column day-6"><div class="day-column-inner" style="height: 840px;"><div class="cal-event ui-corner-all" style="line-height: 18px; font-size: 10px; background-color: rgb(254, 254, 194); top: 130px; height: 20px; display: block;">                <div class="time ui-corner-all" style="background-color: rgb(254, 254, 194);">Chapel: 10:10am</div>                <div class="title" style="background-color: rgb(254, 254, 194);">10:10am-10:30am</div></div><div class="cal-event ui-corner-all" style="line-height: 18px; font-size: 10px; top: 165px; height: 55px; display: block;">                <div class="time ui-corner-all">MATH-230B (TOH184)</div>                <div class="title">10:45am-11:40am</div></div><div class="cal-event ui-corner-all" style="line-height: 18px; font-size: 10px; top: 295px; height: 55px; display: block;">                <div class="time ui-corner-all">MATH-220D (TOH186)</div>                <div class="title">12:55pm-01:50pm</div></div><div class="cal-event ui-corner-all" style="line-height: 18px; font-size: 10px; top: 360px; height: 55px; display: block;">                <div class="time ui-corner-all">MSCS-389 (RNS207)</div>                <div class="title">02:00pm-02:55pm</div></div></div></td><td class="day-column day-7"><div class="day-column-inner" style="height: 840px;"></div></td></tr></tbody></table></div></div></div>
+
+</body></html>

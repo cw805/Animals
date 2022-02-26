@@ -1,0 +1,250 @@
+---
+title: 'Stat 272: Homework #1'
+subtitle: 'Claire Wu'
+output:
+  pdf_document:
+    fig_height: 3
+    fig_width: 4.5
+  html_document: default
+  word_document: default
+geometry: "left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm"
+editor_options: 
+  chunk_output_type: console
+---
+```{r, setup, include = FALSE}
+library(Stat2Data)
+library(tidyverse)
+library(mosaic)
+library(ggpubr)
+library(rstatix)
+library(infer)
+library(kableExtra)
+library(readr)
+
+haiku_21 <- read.csv("~/Downloads/haiku_Fall21.csv")
+data("WeightLossIncentive7")
+data("WeightLossIncentive")
+data("WeightLossIncentive4")
+```
+
+```{r message=FALSE, warning=FALSE, include=FALSE}
+wtloss7 <- as_tibble(WeightLossIncentive7)
+wtloss <- as_tibble(WeightLossIncentive)
+wtloss4 <- as_tibble(WeightLossIncentive4)
+```
+
+
+## 1) Conceptual Exercise 0.5: Scooping ice cream (p.13)  
+
+a) The observational units in this study are 85 nutrition experts asked to scoop themselves as much ice cream as they wanted with randomly assigned large or small spoon and bowl.
+
+b) This is an observational study. Researchers observed and recorded how much ice cream each subject scooped for themselves with the size of bowls and spoons given. Researchers do not control each subject.
+
+c) The response variable is the amount of ice cream scooped by each subject. It is quantitative measured in ounces.
+
+d) The explanatory variables are bowl size and spoon size, they are both categorical, large or small.
+
+## 2) Guided Exercise 0.10: Measuring pumpkins (p.14)
+
+a) Population of interest to the farmer are pumpkins that weigh at least 2 pounds.
+
+b) The description summary computed by the farmer is considered a parameter as it was computed based on the whole population.
+
+c) Population of interest to the customer is the number of pumpkin seeds inside the pumpkins at the store.
+
+d) The numerical summary (123.2) computed by the customer is a statistic. The customer purchased a sample size of 20 pumpkins, and computed average of the number of pumpkin seeds in these 20 pumpkins.
+
+
+## 3) Guided Exercise 0.15: Roller coasters (p.15)
+
+a) The Type code for wooden roller coasters is 0. Top speed predicted this model is 54 + (7.6 x 0) = 54 mph.
+
+b) The Type code for wooden roller coasters is 1. Top speed predicted this model is 54 + (7.6 x 1) = 61.6 mph.
+
+c) The difference in predicted speeds in miles per hour for the two types of coasters is 7.6 mph. This number comes from differences in the type code from the model equation. Each type code indicates which of the two categories of roller coasters' top speed is computed.
+
+\newpage
+
+## 4) Open-ended 0.23: Incentive for weight loss (p.16)
+
+a) There were 5 subjects listed in WeightLossIncentive who were not included in WeightLossIncentive7 because they were missing weight loss data at 7 months.  4 of the 5 subjects with missing month 7 data were from the incentive group.  Discuss potential implications of removing these 5 subjects on your analyses. 
+
+Some of these missing data might include results that could potentially be statistically significant and we would be essentially be removing outliers and become less variable. I think the risk is slightly greater in this experiment compared to, say 500 subjects. 
+
+b) Perform an exploratory data analysis—i.e., report and discuss meaningful summary statistics and at least one useful plot.
+
+```{r message=FALSE, warning=FALSE, include=FALSE}
+wtloss7 <- wtloss7 %>%
+  rename(loss = Month7Loss)
+```
+
+
+```{r message=FALSE, warning=FALSE}
+w7_sum <- ggplot(wtloss7, aes(Group, loss, color = Group)) +
+  geom_boxplot() +
+  geom_point() +
+  theme_classic() +
+  theme(axis.title.x = element_blank()) +
+  labs(title = "7 Month Results")
+
+w_sum <-
+  ggplot(wtloss, aes(Group, WeightLoss, color = Group)) +
+  geom_boxplot() +
+  geom_point() +
+  theme_classic() +
+  theme(axis.title.x = element_blank()) +
+  labs(title = "4 Month Results")
+```
+
+
+```{r message=FALSE, warning=FALSE}
+ggarrange(w7_sum, w_sum,common.legend = TRUE, legend = "none", align = "h", heights = 0.5)
+  
+```
+
+\newpage
+
+c) Perform an appropriate hypothesis test using (i) an independent samples t-test, (ii) simple linear regression, and (iii) a randomization test.  In each case, state your null and alternative hypotheses.  Then, state one conclusion based on your tests (and supported by your 3 p-values) with a well-written sentence in the context of the problem.  
+
+(i) an independent samples t-test
+
+We want to examine if there is a statistically significant difference between means.
+
+Null Hypothesis: $H_0: \mu_1 - \mu_2 = 0$
+
+True difference in weight loss means between Groups equals to 0. Weight changes are independent of financial incentives.
+
+Alternative Hypothesis: $H_a: \mu_1 - \mu_2 \ne 0$
+
+True difference in weight loss means between Groups does not equals to 0. Weight changes are independent of financial incentives
+
+```{r message=FALSE, warning=FALSE}
+t.test( loss ~ Group, data = wtloss7, var.equal = FALSE)
+```
+
+```{r message=FALSE, warning=FALSE}
+t.test( WeightLoss ~ Group, data = wtloss4, var.equal = FALSE) 
+```
+
+t = -0.83
+p-value = 0.41
+95% CI : -11.13 to 7.80 pounds
+Diff in means (Control - Incentive) :
+
+4.64 - 7.8 = -3.16 pounds over 7 months
+
+\newpage
+
+(ii) simple linear regression
+
+$H_O: \beta_1 = 0$
+$H_a: \beta_1 \ne 0$
+
+```{r message=FALSE, warning=FALSE}
+wtloss7_lm <- wtloss7 %>%
+  mutate(Group_num = ifelse(Group == "Control", 0,1))
+
+loss7_linear <- lm( loss ~ Group, data = wtloss7_lm)
+summary(loss7_linear)
+confint(loss7_linear)
+```
+
+```{r}
+ggplot(wtloss7_lm, aes(x = Group_num, y = loss)) +
+  geom_point() +
+  geom_lm()
+```
+
+Intercept = 4.64
+average weight loss for controlled group is around 4.64
+
+Slope = 3.16
+
+(iii) a randomization test
+
+$H_0: \mu_1 - \mu_2 = 0$
+$H_0: \mu_1 - \mu_2 \ne 0$
+
+```{r message=FALSE, warning=FALSE}
+obs_meandiff = 7.80 - 4.64
+
+t_null <- wtloss7 %>%
+  specify(loss ~ Group) %>%   
+  hypothesize(null = "independence") %>%    
+  generate(reps = 1000, type = "permute") %>%
+  calculate(stat = "diff in means", order = c("Control", "Incentive"))
+
+rt_pval <- t_null %>% 
+  get_p_value(obs_stat = obs_meandiff, direction = "two_sided")
+rt_pval
+```
+
+
+d) Tell us what your p-value from the randomization test means (e.g., if it's .333, what is happening 33.3% of the time?)
+
+p-value from the randomization test hovers around 0.4 with each simulation. If Null hypothesis is true, we'd see a mean difference in weight loss as big as 0.41 50% of the time.
+
+e) Report an appropriate 95% confidence interval and interpret it in the context of the problem.
+
+95% CI : -11.13 to 7.80 pounds from the t-test.
+
+We are 95% confident that the true difference in average
+weight loss ranges from -11.13 to 7.80 pounds
+
+f) Assess whether or not assumptions for the two-sample t-test are met (i.e., independence, normality within groups, and sometimes equal variability between groups).
+
+The two groups are independent of one another and normally distributed.
+
+g) Discuss scope of inference – issues of causation and generalizability.  Also discuss what we can conclude about financial incentives for weight loss when combining the results of the 4 month (Example 0.2) and 7 month analyses.
+
+As mentioned in the textbook, all but 2 of the participants in the study were adult men. The results also do not include other factors that could contribute to weight loss such as health condition, race, gender, initial weight management etc.
+
+At month 4, we saw a p-value around 0.0058, weight loss between control and incentive groups was significant. At the 7-month follow up, 5 subjects have been removed. The p-value was around 0.4 which indicates that the weight loss difference between these groups were no longer significant. If we take a look at the summary statistics, the incentive group's average weight loss between month 4 and month 7 decreased from 15.68 to 7.8 while the control group remained fairly stable. Which would explain the loss of significance during the follow up.
+
+```{r message=FALSE, warning=FALSE}
+wt_4 <- wtloss4 %>%
+group_by(Group) %>%
+  summarize(mean = mean(WeightLoss, na.rm = TRUE, digits = 2),
+            median = median(WeightLoss, na.rm = TRUE , digits = 2),
+            sd = sd(WeightLoss, na.rm = TRUE),
+            iqr = IQR(WeightLoss, na.rm = TRUE),
+          n = n())
+
+wt_7 <- wtloss7 %>%
+group_by(Group) %>%
+  summarize(mean = mean(loss, digits = 2),
+            median = median(loss , digits = 2),
+            sd = sd(loss),
+            iqr = IQR(loss),
+          n = n())
+```
+
+
+```{r message=FALSE, warning=FALSE}
+print(wt_7)
+print(wt_4)
+```
+
+
+h) Read the article which produced this data set: “Financial incentive-based approaches for weight loss: a randomized trial” from the Journal of the American Medical Association (it can be found on Moodle under Volpp 2008.pdf).  Describe at least 3 things you learned by reading the article that were not apparent from the short description of the study in Chapter 0.  What are your feelings about the study design and conclusions?
+
+We did not get to explore as much about the weight regain as the study did, but we were able to see that long term weight loss maintenance monitoring will show significant changes when compared to the initial periods. I think the flow chart in the article more clearly outlined the timeline of the results as well as how many were drop during each stage. The study also had more grouping variables like the ones mentioned above. The results definitely tell a more complete story than only having 2 groups.
+
+## 5) Class haiku data
+Is there significant evidence that being primed for intrinsic motivation leads to more creative poems about statistics?  Read in our class data (stored as *haiku_Fall21.csv* in our Class > Data folder), conduct an appropriate significance test, and state a conclusion in context.
+
+```{r message=FALSE, warning=FALSE}
+# p-value = 0.78, t = 0.28
+
+haiku_21 %>%
+  group_by(motivation) %>%
+  summarize(mean = mean(creativity),
+            median = median(creativity),
+            sd = sd(creativity),
+            iqr = IQR(creativity),
+            n = n())
+
+t.test(creativity ~ motivation, data = haiku_21, var.equal = FALSE) 
+```
+
+From our class data, there isn't a statistically significant difference in average creativity scores between the two groups. The extrinsic group has slightly higher mean and median, and a larger IQR compared to the intrinsic group.
